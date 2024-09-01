@@ -1,31 +1,35 @@
-import { server } from "./src/mocks/node";
-
 import { createServer } from "http";
-import { parse } from "url";
-import next from "next";
+import url from "url";
+import movies from "./src/mocks/data/movies.json";
 
-server.listen({
-  onUnhandledRequest: "bypass",
+const port = 3001;
+
+const server = createServer((req, res) => {
+  res.setHeader("Content-Type", "application/json");
+
+  if (req.url === "/movies" && req.method === "GET") {
+    res.writeHead(200);
+    res.end(JSON.stringify(movies));
+  } else if (req.url.startsWith("/movies/details") && req.method === "GET") {
+    new URLSearchParams();
+    const parsedUrl = url.parse(req.url, true);
+    const query = parsedUrl.query;
+    const id = query.id;
+    const movie = movies.find((m) => m.id === id);
+    if (movie) {
+      res.writeHead(200);
+      res.end(JSON.stringify(movie));
+    } else {
+      res.writeHead(200);
+      res.end(JSON.stringify({ error: "unknown id" }));
+    }
+  } else {
+    res.writeHead(404);
+    res.end(JSON.stringify({ message: "Route not found" }));
+  }
 });
 
-server.events.on("request:start", ({ request }) => {
-  console.log("MSW intercepted:", request.method, request.url);
-});
-
-const port = parseInt(process.env.PORT || "3000", 10);
-const dev = process.env.NODE_ENV !== "production";
-const app = next({ dev });
-const handle = app.getRequestHandler();
-
-app.prepare().then(() => {
-  createServer((req, res) => {
-    const parsedUrl = parse(req.url!, true);
-    handle(req, res, parsedUrl);
-  }).listen(port);
-
-  console.log(
-    `> Server listening at http://localhost:${port} as ${
-      dev ? "development" : process.env.NODE_ENV
-    }`,
-  );
+// Start the server and listen on the specified port
+server.listen(port, () => {
+  console.log(`Mock JSON server is running on http://localhost:${port}`);
 });

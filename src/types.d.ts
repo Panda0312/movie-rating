@@ -10,12 +10,7 @@ type TMovie = {
 
 type TMovieState = {
   moviesList: TMovie[];
-  userFeedback: Record<
-    string,
-    {
-      rating?: number;
-      comment?: string;
-    }
-  >;
+  userRate: Record<string, number>;
+  userComments: Record<string, { text: string; time: number }[]>;
   searchStr?: string;
 };

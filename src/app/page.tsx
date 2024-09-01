@@ -6,7 +6,7 @@ export default function Home() {
   const movies = useAppSelector((state) => state.moviesSlice.moviesList);
 
   return (
-    <main className="bg-blue-200 p">
+    <main data-test-id="homePage" className="bg-blue-200 p">
       <MovieList movies={movies} />
     </main>
   );

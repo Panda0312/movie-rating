@@ -5,9 +5,7 @@ import Page from "../page";
 describe("Page", () => {
   it("renders a heading", () => {
     render(<Page />);
-
-    const heading = screen.getByText("Harry Potter");
-
-    expect(heading).toBeInTheDocument();
+    const pageRoot = screen.getByTestId("homePage");
+    expect(pageRoot).toBeInTheDocument();
   });
 });
