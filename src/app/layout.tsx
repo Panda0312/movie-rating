@@ -33,7 +33,7 @@ export default async function RootLayout({
 }>) {
   let data = [];
   try {
-    let res = await fetch(`${API_SERVER}/movies`);
+    let res = await fetch(`${API_SERVER}/movies.json`);
     data = await res.json();
   } catch (e) {
     console.log(e);
