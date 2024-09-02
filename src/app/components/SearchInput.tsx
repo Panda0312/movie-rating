@@ -1,6 +1,6 @@
 "use client";
 import { Box, Collapse, Input } from "@chakra-ui/react";
-import { SyntheticEvent, useCallback, useState } from "react";
+import { SyntheticEvent, useCallback, useMemo, useRef, useState } from "react";
 import lodash from "lodash";
 import {
   updateSearchStr,
@@ -18,17 +18,16 @@ const SearchInput = () => {
 
   const filteredMovies = useAppSelector(selectFilteredMovies);
 
-  const updateStoreSearch = useCallback(
+  const updateStoreSearch = useRef(
     lodash.debounce((v: string) => {
       dispatch(updateSearchStr(v));
     }, 300),
-    [dispatch],
   );
 
   const changeHandler = (e: SyntheticEvent) => {
     const value = (e.target as HTMLInputElement).value;
     setInputValue(value);
-    updateStoreSearch(value);
+    updateStoreSearch.current(value);
   };
 
   const focusHandler = () => setIsOpen(true);

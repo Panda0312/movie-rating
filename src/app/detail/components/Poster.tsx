@@ -25,6 +25,7 @@ const Poster = ({ imgSrc }: { imgSrc: string }) => {
         src={imgSrc}
         width={240}
         onClick={() => setOpenPoster(true)}
+        alt="unknown"
       />
       <Modal isCentered={true} isOpen={openPoster} onClose={onClose}>
         <ModalBody
@@ -47,6 +48,7 @@ const Poster = ({ imgSrc }: { imgSrc: string }) => {
                 src={imgSrc}
                 width={500}
                 maxW={500}
+                alt="unknown"
               />
             </Wrap>
           </Fade>

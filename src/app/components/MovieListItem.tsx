@@ -23,7 +23,7 @@ const MovieListItem = ({
     <Box mb={2} pt={2}>
       <Flex>
         <Box marginRight={6} w={"100px"} flexShrink={0}>
-          <Image src={movie.thumbnail} width={100} />
+          <Image src={movie.thumbnail} width={100} alt="unknown" />
         </Box>
         <Flex direction={"column"} justifyContent={"space-around"}>
           <Flex>

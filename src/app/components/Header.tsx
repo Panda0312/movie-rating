@@ -11,6 +11,7 @@ const Header = () => {
             <Image
               data-testid="logo"
               w={50}
+              alt="unknown"
               src={
                 "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbvwVAC3F5xurW6mtfMrEoeWvuQpisg17tNg&s"
               }
