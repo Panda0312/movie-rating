@@ -2,6 +2,21 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
+to run the project:
+
+1. clone project to local
+2. run
+
+```bash
+npm install
+```
+
+3. start dev server
+
+```bash
+npm run dev
+```
+
 First, run the development server:
 On dev will use msw mock data.
 (optional: run `bash npm run mock` will start an separate mock server.)
