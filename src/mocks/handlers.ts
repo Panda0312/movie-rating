@@ -1,8 +1,7 @@
 import { http, HttpResponse } from "msw";
 
 import movies from "./data/movies.json";
-
-const API_SERVER = process.env.API_SERVER;
+import { API_SERVER } from "@/configs";
 
 export const handlers = [
   http.get(`${API_SERVER}/movies.json`, () => {

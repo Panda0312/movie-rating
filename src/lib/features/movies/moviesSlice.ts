@@ -19,7 +19,7 @@ const moviesSlice = createSlice({
     },
     updateUserRate: (
       state,
-      action: PayloadAction<{ id: string; rating: number | null }>,
+      action: PayloadAction<{ id: string; rating: number }>,
     ) => {
       const { id, rating } = action.payload;
       const prevRate = state.userRate[id];

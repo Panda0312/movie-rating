@@ -1,6 +1,10 @@
 {
   "compilerOptions": {
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     // "strict": true,
@@ -18,11 +22,16 @@
       }
     ],
     "paths": {
-      "@/*": ["./src/*"],
-      "@/components/*": ["components/*"]
+      "@/*": [
+        "./src/*"
+      ],
+      "@/components/*": [
+        "components/*"
+      ]
     },
     "baseUrl": "./",
-    "strict": false
+    "strict": false,
+    "strictNullChecks": true
   },
   "include": [
     "next-env.d.ts",
@@ -32,5 +41,7 @@
     "jest.config.ts",
     "server.ts"
   ],
-  "exclude": ["node_modules"]
+  "exclude": [
+    "node_modules"
+  ]
 }
