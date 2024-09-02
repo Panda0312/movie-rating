@@ -56,6 +56,7 @@ const SearchInput = () => {
       />
       <Collapse in={isOpen}>
         <Box
+          data-testid="searchResult"
           position={"absolute"}
           right={0}
           minW={"100%"}

@@ -33,6 +33,7 @@ const Rating = ({
   return (
     <Box pos={"relative"}>
       <Button
+        data-testid="rate-btn"
         size={"sm"}
         borderRadius={10}
         color={"#284de2"}
@@ -62,6 +63,7 @@ const Rating = ({
               onClick={() => rateHandler(item)}
             >
               <StarIcon
+                data-testid={`rateStar-${item}`}
                 color={item <= overItem ? "#f5c518" : "white"}
                 stroke={"#f5c518"}
               />

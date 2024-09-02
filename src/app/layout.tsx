@@ -7,6 +7,7 @@ import StoreProvider from "./StoreProvider";
 import Header from "./components/Header";
 
 import "./globals.css";
+import { server } from "@/mocks/node";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,6 +17,14 @@ export const metadata: Metadata = {
 };
 
 const MOCK_SERVER = process.env.MOCK_SERVER;
+if (process.env.NODE_ENV === "development") {
+  server.listen({
+    onUnhandledRequest: "bypass",
+  });
+  server.events.on("request:start", ({ request }) => {
+    console.log("MSW intercepted:", request.method, request.url);
+  });
+}
 
 export default async function RootLayout({
   children,

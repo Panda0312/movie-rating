@@ -1,6 +1,6 @@
 import "@testing-library/jest-dom";
 import { screen } from "@testing-library/react";
-import Page from "../page";
+import Header from "../Header";
 import { reduxStore, renderWithProviders } from "@/mocks/TestUtil";
 import { resetStore } from "@/lib/features/movies/moviesSlice";
 
@@ -10,8 +10,8 @@ afterAll(() => {
 
 describe("Page", () => {
   it("renders a heading", () => {
-    renderWithProviders(<Page />);
-    const pageRoot = screen.getByTestId("homePage");
-    expect(pageRoot).toBeInTheDocument();
+    renderWithProviders(<Header />);
+    const logo = screen.getByTestId("logo");
+    expect(logo).toBeInTheDocument();
   });
 });

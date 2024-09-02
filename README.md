@@ -2,13 +2,8 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
-First start mock data server on 3001:
-
-```bash
-npm run mock
-```
-
-Then, run the development server:
+First, run the development server:
+On dev will use msw mock data
 
 ```bash
 npm run dev

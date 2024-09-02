@@ -58,6 +58,13 @@ const moviesSlice = createSlice({
         ...(state.userComments[id] || []),
       ];
     },
+    resetStore: (state) => {
+      state = {
+        moviesList: [],
+        userRate: {},
+        userComments: {},
+      };
+    },
   },
 });
 
@@ -85,5 +92,6 @@ export const {
   updateSearchStr,
   updateUserRate,
   updateUserComments,
+  resetStore,
 } = moviesSlice.actions;
 export default moviesSlice.reducer;

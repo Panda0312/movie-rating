@@ -17,7 +17,7 @@ const MovieDetail = ({ params }) => {
   const userRate = useAppSelector(selectUserRate)[id] || null;
 
   return movie ? (
-    <main>
+    <main data-testid="detailPage">
       <Flex>
         <Box mr={4}>
           <Poster imgSrc={movie.thumbnail} />

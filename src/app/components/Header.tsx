@@ -9,6 +9,7 @@ const Header = () => {
         <Box>
           <Link href={"/"}>
             <Image
+              data-testid="logo"
               w={50}
               src={
                 "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbvwVAC3F5xurW6mtfMrEoeWvuQpisg17tNg&s"
