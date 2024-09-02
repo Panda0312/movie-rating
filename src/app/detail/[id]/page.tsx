@@ -17,8 +17,11 @@ const MovieDetail = ({ params }) => {
   const userRate = useAppSelector(selectUserRate)[id] || null;
 
   return movie ? (
-    <main data-testid="detailPage">
-      <Flex>
+    <main data-testid="detailPage" className="sm:p-0 p-2">
+      <Flex
+        flexDirection={{ md: "row", base: "column" }}
+        alignItems={{ md: "initial", base: "center" }}
+      >
         <Box mr={4}>
           <Poster imgSrc={movie.thumbnail} />
         </Box>

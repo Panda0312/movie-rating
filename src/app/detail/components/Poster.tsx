@@ -42,7 +42,12 @@ const Poster = ({ imgSrc }: { imgSrc: string }) => {
               top={"50%"}
               transform={"translate(-50%,-50%)"}
             >
-              <Image data-testid="largeImg" src={imgSrc} width={500} />
+              <Image
+                data-testid="largeImg"
+                src={imgSrc}
+                width={500}
+                maxW={500}
+              />
             </Wrap>
           </Fade>
         </ModalBody>
