@@ -40,7 +40,9 @@ const Comments = ({ id }: { id: string }) => {
         <Button onClick={() => setComment("")} mr={2}>
           Cancel
         </Button>
-        <Button onClick={addComment}>Submit</Button>
+        <Button disabled={!comment.trim().length} onClick={addComment}>
+          Submit
+        </Button>
       </Box>
       <List>
         {comments.map((comment) => (
